@@ -19,7 +19,7 @@ app.use("/api", newUser);
 
 
 // Running Server
-const PORT = 3000;
-app.listen(PORT, () => {
-  console.log("Server Is Running On Port", PORT);
+
+app.listen(3000 || process.env.PORT , () => {
+  console.log("Server Is Running On Port");
 });
