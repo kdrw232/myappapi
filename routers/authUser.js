@@ -22,14 +22,14 @@ router.post("/register", async (req, res) => {
     if (!validation.success) {
     return res.status(400).json({ message: validation.error.errors[0].message });
     }
-    const existingUser = await prisma.user.findUnique({
-      where: { email },
-      where: { username },
-    });
+    // const existingUser = await prisma.user.findUnique({
+    //   where: { email },
+    //   where: { username },
+    // });
 
-    if (existingUser) {
-      return res.status(400).json({ message: "This user already registered" });
-    }
+    // if (existingUser) {
+    //   return res.status(400).json({ message: "This user already registered" });
+    // }
     const newUser = await prisma.user.create({
       data: {
         fullName,
